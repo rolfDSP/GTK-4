@@ -1,0 +1,62 @@
+using Gtk 4.0;
+
+ApplicationWindow main_window {
+  title: "GTK4 Multi-Window Demo";
+  default-width: 800;
+  default-height: 600;
+  show-menubar: false;
+
+  Box {
+    orientation: vertical;
+
+    PopoverMenuBar {
+      menu-model: main_menu;
+    }
+
+    Box {
+      orientation: vertical;
+      vexpand: true;
+      halign: center;
+      valign: center;
+      spacing: 12;
+      margin-top: 24;
+      margin-bottom: 24;
+      margin-start: 24;
+      margin-end: 24;
+
+      Label {
+        label: "GTK4 Multi-Window Blueprint Demo";
+        styles ["title-1"]
+      }
+
+      Label {
+        label: "Use the Windows menu to open sub-windows.";
+      }
+    }
+  }
+}
+
+menu main_menu {
+  submenu {
+    label: "File";
+    item {
+      label: "Quit";
+      action: "app.quit";
+    }
+  }
+  submenu {
+    label: "Windows";
+    item {
+      label: "About";
+      action: "win.show-about";
+    }
+    item {
+      label: "Settings";
+      action: "win.show-settings";
+    }
+    item {
+      label: "Info";
+      action: "win.show-info";
+    }
+  }
+}

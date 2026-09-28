@@ -1,0 +1,43 @@
+using Gtk 4.0;
+
+Window about_window {
+  title: "About";
+  default-width: 420;
+  default-height: 300;
+  modal: true;
+  resizable: false;
+  hide-on-close: true;
+
+  Box {
+    orientation: vertical;
+    vexpand: true;
+    halign: center;
+    valign: center;
+    spacing: 12;
+    margin-top: 32;
+    margin-bottom: 32;
+    margin-start: 32;
+    margin-end: 32;
+
+    Label {
+      label: "GTK4 Blueprint Demo";
+      styles ["title-1"]
+    }
+
+    Label {
+      label: "Version 1.0.0";
+    }
+
+    Label {
+      label: "A multi-window GTK4 demo\nusing Blueprint UI definitions and CMake.";
+      justify: center;
+    }
+
+    Button {
+      label: "Close";
+      halign: center;
+      margin-top: 16;
+      action-name: "window.close";
+    }
+  }
+}

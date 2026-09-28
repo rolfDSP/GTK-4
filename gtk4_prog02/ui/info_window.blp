@@ -1,0 +1,112 @@
+using Gtk 4.0;
+
+Window info_window {
+  title: "System Info";
+  default-width: 480;
+  default-height: 320;
+  hide-on-close: true;
+
+  Box {
+    orientation: vertical;
+    margin-top: 16;
+    margin-bottom: 16;
+    margin-start: 16;
+    margin-end: 16;
+    spacing: 12;
+
+    Label {
+      label: "System Information";
+      styles ["title-2"]
+      halign: start;
+    }
+
+    Grid {
+      column-spacing: 24;
+      row-spacing: 8;
+      margin-top: 8;
+
+      Label {
+        label: "GTK Version:";
+        halign: start;
+        styles ["heading"]
+        layout {
+          column: 0;
+          row: 0;
+        }
+      }
+
+      Label info_gtk_value {
+        label: "—";
+        halign: start;
+        layout {
+          column: 1;
+          row: 0;
+        }
+      }
+
+      Label {
+        label: "Blueprint Version:";
+        halign: start;
+        styles ["heading"]
+        layout {
+          column: 0;
+          row: 1;
+        }
+      }
+
+      Label {
+        label: "0.12.0";
+        halign: start;
+        layout {
+          column: 1;
+          row: 1;
+        }
+      }
+
+      Label {
+        label: "Language:";
+        halign: start;
+        styles ["heading"]
+        layout {
+          column: 0;
+          row: 2;
+        }
+      }
+
+      Label {
+        label: "C++20 / GTK4";
+        halign: start;
+        layout {
+          column: 1;
+          row: 2;
+        }
+      }
+
+      Label {
+        label: "Build System:";
+        halign: start;
+        styles ["heading"]
+        layout {
+          column: 0;
+          row: 3;
+        }
+      }
+
+      Label {
+        label: "CMake 3.20+";
+        halign: start;
+        layout {
+          column: 1;
+          row: 3;
+        }
+      }
+    }
+
+    Button {
+      label: "Close";
+      halign: end;
+      margin-top: 8;
+      action-name: "window.close";
+    }
+  }
+}

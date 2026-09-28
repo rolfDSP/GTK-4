@@ -1,0 +1,132 @@
+using Gtk 4.0;
+
+Window settings_window {
+  title: "Settings";
+  default-width: 480;
+  default-height: 380;
+  hide-on-close: true;
+
+  Box {
+    orientation: vertical;
+    margin-top: 16;
+    margin-bottom: 16;
+    margin-start: 16;
+    margin-end: 16;
+    spacing: 12;
+
+    Label {
+      label: "Settings";
+      styles ["title-2"]
+      halign: start;
+    }
+
+    ListBox {
+      selection-mode: none;
+
+      ListBoxRow {
+        activatable: false;
+
+        Box {
+          orientation: horizontal;
+          margin-top: 8;
+          margin-bottom: 8;
+          margin-start: 12;
+          margin-end: 12;
+          spacing: 12;
+
+          Label {
+            label: "Dark Theme";
+            hexpand: true;
+            halign: start;
+          }
+
+          Switch switch_dark_theme {}
+        }
+      }
+
+      ListBoxRow {
+        activatable: false;
+
+        Box {
+          orientation: horizontal;
+          margin-top: 8;
+          margin-bottom: 8;
+          margin-start: 12;
+          margin-end: 12;
+          spacing: 12;
+
+          Label {
+            label: "Enable Notifications";
+            hexpand: true;
+            halign: start;
+          }
+
+          Switch switch_notifications {
+            active: true;
+          }
+        }
+      }
+
+      ListBoxRow {
+        activatable: false;
+
+        Box {
+          orientation: horizontal;
+          margin-top: 8;
+          margin-bottom: 8;
+          margin-start: 12;
+          margin-end: 12;
+          spacing: 12;
+
+          Label {
+            label: "Auto-save";
+            hexpand: true;
+            halign: start;
+          }
+
+          Switch switch_autosave {
+            active: true;
+          }
+        }
+      }
+
+      ListBoxRow {
+        activatable: false;
+
+        Box {
+          orientation: horizontal;
+          margin-top: 8;
+          margin-bottom: 8;
+          margin-start: 12;
+          margin-end: 12;
+          spacing: 12;
+
+          Label {
+            label: "Test";
+            hexpand: true;
+            halign: start;
+          }
+
+          Entry edit_test {
+            sensitive: true;
+          }
+        }
+      }
+    }
+
+    Box {
+      halign: end;
+      margin-top: 8;
+      spacing: 8;
+
+      Button btn_cancel {
+        label: "Cancel";
+      }
+
+      Button btn_apply {
+        label: "Apply";
+        styles ["suggested-action"]
+      }
+    }
+  }
+}
