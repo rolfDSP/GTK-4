@@ -1,0 +1,29 @@
+using Gtk 4.0;
+
+ApplicationWindow window {
+  title: "GTK4 Blueprint Example";
+  default-width: 400;
+  default-height: 300;
+
+  Box {
+    orientation: vertical;
+    spacing: 12;
+    margin-top: 24;
+    margin-bottom: 24;
+    margin-start: 24;
+    margin-end: 24;
+
+    Label {
+      label: "Hello from Blueprint!";
+      styles ["title-1"]
+    }
+
+    Button button {
+      label: "Click me!";
+    }
+
+    Label status_label {
+      label: "";
+    }
+  }
+}
